@@ -1,9 +1,8 @@
 # uncleaner v1
 
 # Скриншоты:
-![Иллюстрация к проекту](https://telegra.ph/file/7d3a75e3d7cd5f276f17e.jpg)
-https://telegra.ph/file/7d3a75e3d7cd5f276f17e.jpg
-https://telegra.ph/file/3bea2fe79a024b9459bd1.jpg
+![Меню](https://telegra.ph/file/7d3a75e3d7cd5f276f17e.jpg)
+![Скриншот ошибки](https://telegra.ph/file/3bea2fe79a024b9459bd1.jpg)
 
 # Поддерживает скрытие читов:
 - UndeadHack
