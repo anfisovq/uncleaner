@@ -17,12 +17,13 @@ ECHO 2 - Очистка всех логов в реестре, файлов Perfect и Minidump
 ECHO 3 - Очистка всех логов, файлов Perfect и журналов Windows 
 ECHO 4 - Очистка подозрительных файлов Unturned / Конфигураций читов
 ECHO 5 - Удаление логов Unturned
+ECHO 6 - Удаление истории/cookies Google Chrome
 
 ECHO ENTER - Выход из программы
 ECHO.
 SET /p doset="Выберите действие: " 
 ECHO.
-IF NOT (%doset% GEQ 1 AND %doset% LEQ 5) EXIT
+IF NOT (%doset% GEQ 1 AND %doset% LEQ 6) EXIT
 IF %doset% EQU 4 (
 	ECHO.
 	ECHO Очистка подозрительных файлов Unturned...
@@ -51,6 +52,19 @@ IF %doset% EQU 5 (
 	del /f "C:\Program Files (x86)\Steam\steamapps\common\Unturned\Logs\Client_Prev.log" & type nul > "C:\Program Files (x86)\Steam\steamapps\common\Unturned\Logs\Client_Prev.log"
 	ECHO Очистил Client_Prev.log
 	ECHO.
+)
+
+IF %doset% EQU 6 (
+	ECHO.
+	ECHO Начинаю очистку Google Chrome...
+	taskkill.exe /f /t /fi "ImageName eq chrome.exe"
+	del "%userprofile%\AppData\Local\Google\Chrome\User Data\Default\*History *" /q
+	del "%userprofile%\AppData\Local\Google\Chrome\User Data\Default\History" /q
+	del "%userprofile%\AppData\Local\Google\Chrome\User Data\Default\History Index*" /q
+	del "%userprofile%\AppData\Local\Google\Chrome\User Data\Default\Archived History" /q
+	del "%userprofile%\AppData\Local\Google\Chrome\User Data\Default\Visited Links" /q
+	del "%userprofile%\AppData\Local\Google\Chrome\User Data\Default\Top Sites" /q
+	ECHO Google Chrome очищен.
 )
 
 IF %doset% EQU 3 (
